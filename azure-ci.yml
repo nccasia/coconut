@@ -24,16 +24,16 @@ jobs:
       # (there is even an open question about it)
       # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops
       # just use "/home/vsts" for now
-      - task: Cache@2
-        inputs:
-          key: npm | $(Agent.OS) | package-lock.json
-          path: /home/vsts/.npm
-        displayName: Cache NPM packages
-      - task: Cache@2
-        inputs:
-          key: cypress | $(Agent.OS) | package-lock.json
-          path: /home/vsts/.cache/Cypress
-        displayName: Cache Cypress binary
+      # - task: Cache@2
+      #   inputs:
+      #     key: npm | $(Agent.OS) | package-lock.json
+      #     path: /home/vsts/.npm
+      #   displayName: Cache NPM packages
+      # - task: Cache@2
+      #   inputs:
+      #     key: cypress | $(Agent.OS) | package-lock.json
+      #     path: /home/vsts/.cache/Cypress
+      #   displayName: Cache Cypress binary
 
       - script: sudo apt install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
         displayName: 'Install platform dependencies'
