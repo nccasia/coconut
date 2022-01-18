@@ -59,6 +59,7 @@
   },
   "homepage": "https://github.com/cypress-io/cypress-example-kitchensink#readme",
   "dependencies": {
+    "cypress-cucumber-preprocessor": "4.3.1",
     "npm-run-all": "^4.1.2",
     "serve": "11.3.0"
   },
@@ -67,6 +68,8 @@
     "@cypress/eslint-plugin-dev": "5.0.0",
     "colon-names": "1.0.0",
     "cypress": "7.3.0",
+    "cypress-dotenv": "2.0.0",
+    "dotenv": "14.2.0",
     "eslint": "7.0.0",
     "eslint-plugin-cypress": "2.8.1",
     "eslint-plugin-json-format": "2.0.1",
@@ -88,5 +91,8 @@
       "pre-commit": "npm run lint && npm run lint:yaml",
       "pre-push": "npm run lint && npm run lint:yaml"
     }
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }
