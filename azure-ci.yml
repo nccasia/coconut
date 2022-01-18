@@ -8,7 +8,7 @@ jobs:
 
   # Job names can contain alphanumeric characters and '_', cannot start with a number
   - job: Cypress_e2e_tests
-    pool:	build-windows-agent2
+    pool: Linux_NVM
     strategy:
       parallel: 4
     steps:
