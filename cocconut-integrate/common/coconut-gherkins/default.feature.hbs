@@ -1,0 +1,30 @@
+{{#each tags}}{{this}} {{/each}}
+Feature: {{name}}
+Ref: {{meta.ref}}
+{{description}}
+
+  {{#each scenarios}}
+  # ###########
+  {{#commented}}
+   Ref: {{meta.ref}}
+  {{/commented}}
+  {{#commented}}
+    {{description}}
+  {{/commented}}
+
+   {{#each tags}}{{this}} {{/each}}
+    Scenario Outline: {{outline}}
+      {{#each steps}}
+      {{#if comment}}
+      {{#commented}}{{comment}}{{/commented}}
+      {{/if}}
+      {{message}}
+      {{#if postComment}}
+      {{#commented}}{{postComment}}{{/commented}}
+      {{/if}}
+      {{/each}}
+
+      {{>examples examples}}
+  {{/each}}
+
+  

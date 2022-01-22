@@ -4,15 +4,15 @@
     "plugin:@cypress/dev/tests",
     "plugin:mocha/recommended"
   ],
-  "plugins": [
-    "cypress",
-    "@cypress/dev",
-    "mocha"
-  ],
+  "plugins": ["cypress", "@cypress/dev", "mocha"],
   "env": {
     "cypress/globals": true
   },
   "rules": {
+    "semi": 0,
+    "quotes": 0,
+    "no-console": 0,
+    "space-before-function-paren": 0,
     "indent": ["error", 2, { "SwitchCase": 1, "MemberExpression": "off" }],
     "mocha/no-exclusive-tests": "error"
   }

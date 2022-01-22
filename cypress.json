@@ -1,4 +1,9 @@
 {
   "projectId": "4b7344",
-  "testFiles": "**/*.{feature,features}"
+  "testFiles": "**/*.{feature,features}",
+  "ignoreTestFiles": "*.js",
+  "screenshotsFolder": "reports/screenshots",
+  "videosFolder": "reports/videos",
+  "chromeWebSecurity": false,
+  "video": false
 }

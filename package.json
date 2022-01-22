@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "npm run lint",
-    "start": "serve --listen ${PORT:-8080}",
+    "start": "serve --listen -p ${PORT:-8080}",
     "start:ci": "serve --no-clipboard --listen ${PORT:-8080}",
     "start:ci:windows": "serve --no-clipboard --listen 8080",
     "dev": "npm start",
@@ -46,6 +46,10 @@
     "local:run": "start-test 8080 cy:run",
     "local:run:record": "start-test 8080 cy:run:record",
     "ci:set-port": "node ./scripts/set-port",
+    "download:features": "node ./scripts/index download",
+    "download": "npm run download:features",
+    "report": "node ./scripts/index report",
+    "test:integrate": "npm run prepare && npm run test:ci; npm run report",
     "semantic-release": "semantic-release"
   },
   "repository": {
@@ -59,13 +63,26 @@
   },
   "homepage": "https://github.com/cypress-io/cypress-example-kitchensink#readme",
   "dependencies": {
+    "@cucumber/cucumber": "8.0.0-rc.2",
+    "ascii-table": "0.0.9",
+    "axios": "0.25.0",
+    "commander": "8.3.0",
     "cypress-cucumber-preprocessor": "4.3.1",
+    "decode-html": "2.0.0",
+    "dotenv-validator": "0.1.9",
+    "esbuild": "0.14.11",
+    "flat": "5.0.2",
+    "html-to-text": "8.1.0",
     "npm-run-all": "^4.1.2",
-    "serve": "11.3.0"
+    "serve": "11.3.0",
+    "through2": "4.0.2",
+    "util": "0.12.4",
+    "xml-parser": "1.2.1"
   },
   "devDependencies": {
     "@bahmutov/print-env": "1.2.0",
     "@cypress/eslint-plugin-dev": "5.0.0",
+    "@testing-library/cypress": "8.0.2",
     "colon-names": "1.0.0",
     "cypress": "7.3.0",
     "cypress-dotenv": "2.0.0",
@@ -93,6 +110,12 @@
     }
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "reports/results",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }
