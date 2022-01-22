@@ -70,7 +70,6 @@
     "cypress-cucumber-preprocessor": "4.3.1",
     "decode-html": "2.0.0",
     "dotenv-validator": "0.1.9",
-    "esbuild": "0.14.11",
     "flat": "5.0.2",
     "html-to-text": "8.1.0",
     "npm-run-all": "^4.1.2",
