@@ -10,7 +10,7 @@ jobs:
   - job: Cypress_e2e_tests
     pool: Linux_NVM
     strategy:
-      parallel: 4
+      parallel: 1
     steps:
       - task: NodeTool@0
         inputs:
