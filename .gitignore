@@ -11,6 +11,7 @@ cypress/fixtures/users.json
 env
 .env
 .DS_Store
-cypress/integration/features/**/*.feature
+cypress/integration/**/*.feature
 reports/results/*.json
 reports/screenshots/*.*
+cypress/results/**/*.*

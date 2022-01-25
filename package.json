@@ -26,7 +26,7 @@
     "e2e:record:edge": "cypress run --record --browser edge",
     "e2e:record:firefox": "cypress run --record --browser firefox",
     "e2e:record:parallel": "cypress run --record --parallel",
-    "test:ci": "run-p --race start:ci e2e",
+    "test:ci": "cypress run --config-file cypress.ci.json",
     "test:ci:windows": "run-p --race start:ci:windows e2e",
     "test:ci:chrome": "run-p --race start:ci e2e:chrome",
     "test:ci:record": "run-p --race start:ci e2e:record",
@@ -48,7 +48,8 @@
     "ci:set-port": "node ./scripts/set-port",
     "download:features": "node ./scripts/index download",
     "download": "npm run download:features",
-    "report": "node ./scripts/index report",
+    "test:cd": "cypress run",
+    "report": "node ./cypress/reporting/report.js",
     "test:integrate": "npm run prepare && npm run test:ci; npm run report",
     "semantic-release": "semantic-release"
   },
@@ -63,6 +64,7 @@
   },
   "homepage": "https://github.com/cypress-io/cypress-example-kitchensink#readme",
   "dependencies": {
+    "@babel/core": "7.16.12",
     "@cucumber/cucumber": "8.0.0-rc.2",
     "ascii-table": "0.0.9",
     "axios": "0.25.0",
@@ -71,9 +73,14 @@
     "decode-html": "2.0.0",
     "dotenv-validator": "0.1.9",
     "flat": "5.0.2",
+    "fs-extra": "10.0.0",
+    "handlebars": "4.7.7",
     "html-to-text": "8.1.0",
+    "multiple-cucumber-html-reporter": "1.18.3",
     "npm-run-all": "^4.1.2",
+    "rimraf": "3.0.2",
     "serve": "11.3.0",
+    "through": "2.3.8",
     "through2": "4.0.2",
     "util": "0.12.4",
     "xml-parser": "1.2.1"
@@ -83,6 +90,8 @@
     "@cypress/eslint-plugin-dev": "5.0.0",
     "@testing-library/cypress": "8.0.2",
     "colon-names": "1.0.0",
+    "cucumber-html-reporter": "5.5.0",
+    "cucumber-junit-convert": "2.0.0",
     "cypress": "7.3.0",
     "cypress-dotenv": "2.0.0",
     "dotenv": "14.2.0",
@@ -112,7 +121,7 @@
     "nonGlobalStepDefinitions": true,
     "cucumberJson": {
       "generate": true,
-      "outputFolder": "reports/results",
+      "outputFolder": "cypress/results/cucumber",
       "filePrefix": "",
       "fileSuffix": ".cucumber"
     }

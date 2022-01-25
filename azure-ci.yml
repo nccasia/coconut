@@ -1,6 +1,10 @@
 # if you want to configure triggers for Azure CI see
 # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=yaml#tags
-
+trigger:
+  branches:
+    include:
+    - master
+    
 jobs:
 
   # Example job that runs end-to-end tests using Cypress test runner
@@ -51,8 +55,23 @@ jobs:
           npx print-env AGENT
           npx print-env BUILD
           npx print-env SYSTEM
-          npx cypress run 
+          npx cypress run --config-file cypress.ci.json
         displayName: 'Run Cypress tests'
+      
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: '$(Build.SourcesDirectory)'
+          Contents: |
+            **
+            !node_modules/**
+            !cypress/results/**
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'erp-e2e'
+          publishLocation: 'Container'
         env:
           # avoid warnings about terminal
           TERM: xterm
