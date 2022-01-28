@@ -22,3 +22,22 @@ Given(
     cy.get(`#${id}`).click();
   },
 );
+
+Given(
+  "user click on button with class {string}",
+  function (className) {
+    cy.get(`.${className}`).click();
+  },
+);
+
+Given(
+  "user is able to click on button {string}",
+  function (text) {
+    cy.wait(1000)
+    cy.get('button').contains(text).click()
+  },
+);
+
+Given("user visit to sub page {string}", function (text) {
+  cy.get(`a[href*="${text}"]`).click()
+});
