@@ -5,6 +5,7 @@
   "screenshotsFolder": "cypress/results/screenshots",
   "videosFolder": "cypress/results/videos",
   "chromeWebSecurity": false,
+  "screenshotOnRunFailure": true,
   "video": false,
-  "defaultCommandTimeout": 101000
+  "defaultCommandTimeout": 10000
 }
