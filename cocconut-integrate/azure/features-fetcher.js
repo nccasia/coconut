@@ -81,8 +81,6 @@ async function getTestCase({ projectId, workItemId }) {
 }
 
 async function fetchFeatures(params) {
-  azureApi.configure(params);
-
   const project = await getProject({ id: params.projectId });
 
   const plan = await getTestPlan({

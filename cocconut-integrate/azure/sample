@@ -1,0 +1,150 @@
+2022-01-25T03:47:07.6236942Z ##[section]Starting: Run Cypress tests
+2022-01-25T03:47:07.6260327Z ==============================================================================
+2022-01-25T03:47:07.6261344Z Task         : Command line
+2022-01-25T03:47:07.6262305Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2022-01-25T03:47:07.6263267Z Version      : 2.164.2
+2022-01-25T03:47:07.6263964Z Author       : Microsoft Corporation
+2022-01-25T03:47:07.6264949Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2022-01-25T03:47:07.6266077Z ==============================================================================
+2022-01-25T03:47:07.9837757Z Generating script.
+2022-01-25T03:47:07.9888263Z ========================== Starting Command Output ===========================
+2022-01-25T03:47:07.9965550Z [command]/usr/bin/bash --noprofile --norc /home/nccsoft/myagent/_work/_temp/e8e527f3-914f-4e2a-90f9-d6a7324aca8a.sh
+2022-01-25T03:47:08.1677254Z AGENT_ACCEPTTEEEULA=True
+2022-01-25T03:47:08.1692552Z AGENT_BUILDDIRECTORY=/home/nccsoft/myagent/_work/3
+2022-01-25T03:47:08.1693847Z AGENT_DISABLELOGPLUGIN_TESTFILEPUBLISHERPLUGIN=true
+2022-01-25T03:47:08.1694749Z AGENT_DISABLELOGPLUGIN_TESTRESULTLOGPLUGIN=true
+2022-01-25T03:47:08.1695663Z AGENT_HOMEDIRECTORY=/home/nccsoft/myagent
+2022-01-25T03:47:08.1696275Z AGENT_ID=31
+2022-01-25T03:47:08.1698994Z AGENT_JOBNAME=Cypress_e2e_tests
+2022-01-25T03:47:08.1701326Z AGENT_JOBSTATUS=Succeeded
+2022-01-25T03:47:08.1702195Z AGENT_MACHINENAME=nvmbuildagent1
+2022-01-25T03:47:08.1702909Z AGENT_NAME=nvmbuildagent1
+2022-01-25T03:47:08.1703530Z AGENT_OS=Linux
+2022-01-25T03:47:08.1704072Z AGENT_OSARCHITECTURE=X64
+2022-01-25T03:47:08.1704679Z AGENT_READONLYVARIABLES=true
+2022-01-25T03:47:08.1705380Z AGENT_RETAINDEFAULTENCODING=false
+2022-01-25T03:47:08.1706137Z AGENT_ROOTDIRECTORY=/home/nccsoft/myagent/_work
+2022-01-25T03:47:08.1718535Z AGENT_TEMPDIRECTORY=/home/nccsoft/myagent/_work/_temp
+2022-01-25T03:47:08.1721030Z AGENT_TOOLSDIRECTORY=/home/nccsoft/myagent/_work/_tool
+2022-01-25T03:47:08.1721991Z AGENT_VERSION=2.170.1
+2022-01-25T03:47:08.1722690Z AGENT_WORKFOLDER=/home/nccsoft/myagent/_work
+2022-01-25T03:47:08.3329395Z BUILD_ARTIFACTSTAGINGDIRECTORY=/home/nccsoft/myagent/_work/3/a
+2022-01-25T03:47:08.3354296Z BUILD_BINARIESDIRECTORY=/home/nccsoft/myagent/_work/3/b
+2022-01-25T03:47:08.3355836Z BUILD_BUILDID=4002
+2022-01-25T03:47:08.3356721Z BUILD_BUILDNUMBER=20220125.4
+2022-01-25T03:47:08.3357725Z BUILD_BUILDURI=vstfs:///Build/Build/4002
+2022-01-25T03:47:08.3359231Z BUILD_CONTAINERID=271170
+2022-01-25T03:47:08.3362990Z BUILD_DEFINITIONNAME=NCC-ERP-E2E
+2022-01-25T03:47:08.3364253Z BUILD_DEFINITIONVERSION=2
+2022-01-25T03:47:08.3365337Z BUILD_QUEUEDBY=Luc Van Minh
+2022-01-25T03:47:08.3367643Z BUILD_QUEUEDBYID=a0ebbb72-76aa-44f4-88b2-a7e038a468ed
+2022-01-25T03:47:08.3368427Z BUILD_REASON=Manual
+2022-01-25T03:47:08.3370695Z BUILD_REPOSITORY_CLEAN=False
+2022-01-25T03:47:08.3371483Z BUILD_REPOSITORY_GIT_SUBMODULECHECKOUT=False
+2022-01-25T03:47:08.3373203Z BUILD_REPOSITORY_ID=4cb3ea51-60e4-499d-bc22-09accf358f0d
+2022-01-25T03:47:08.3374179Z BUILD_REPOSITORY_LOCALPATH=/home/nccsoft/myagent/_work/3/s
+2022-01-25T03:47:08.3375572Z BUILD_REPOSITORY_NAME=ncc-erp-e2e
+2022-01-25T03:47:08.3376289Z BUILD_REPOSITORY_PROVIDER=TfsGit
+2022-01-25T03:47:08.3377956Z BUILD_REPOSITORY_URI=http://ops.nccsoft.vn/DefaultCollection/NCC-ERP/_git/ncc-erp-e2e
+2022-01-25T03:47:08.3379433Z BUILD_REQUESTEDFOR=Luc Van Minh
+2022-01-25T03:47:08.3380192Z BUILD_REQUESTEDFOREMAIL=minh.lucvan@ncc.asia
+2022-01-25T03:47:08.3381747Z BUILD_REQUESTEDFORID=a0ebbb72-76aa-44f4-88b2-a7e038a468ed
+2022-01-25T03:47:08.3382657Z BUILD_SOURCEBRANCH=refs/heads/master
+2022-01-25T03:47:08.3383337Z BUILD_SOURCEBRANCHNAME=master
+2022-01-25T03:47:08.3384101Z BUILD_SOURCESDIRECTORY=/home/nccsoft/myagent/_work/3/s
+2022-01-25T03:47:08.3385026Z BUILD_SOURCEVERSION=c238d6b92f7ff147722a46ad96da5844001f9aec
+2022-01-25T03:47:08.3385998Z BUILD_SOURCEVERSIONAUTHOR=Luc Van Minh
+2022-01-25T03:47:08.3386879Z BUILD_SOURCEVERSIONMESSAGE=Merged PR 15072: Project init
+2022-01-25T03:47:08.3388594Z BUILD_STAGINGDIRECTORY=/home/nccsoft/myagent/_work/3/a
+2022-01-25T03:47:08.5014461Z SYSTEM=build
+2022-01-25T03:47:08.5031433Z SYSTEM_ARTIFACTSDIRECTORY=/home/nccsoft/myagent/_work/3/a
+2022-01-25T03:47:08.5035034Z SYSTEM_COLLECTIONID=df5db4c2-5e2f-42e2-be41-ac892a539824
+2022-01-25T03:47:08.5036308Z SYSTEM_COLLECTIONURI=https://ops.nccsoft.vn/DefaultCollection/
+2022-01-25T03:47:08.5037734Z SYSTEM_CULTURE=en-US
+2022-01-25T03:47:08.5038621Z SYSTEM_DEFAULTWORKINGDIRECTORY=/home/nccsoft/myagent/_work/3/s
+2022-01-25T03:47:08.5039396Z SYSTEM_DEFINITIONID=49
+2022-01-25T03:47:08.5067731Z SYSTEM_DEFINITIONNAME=NCC-ERP-E2E
+2022-01-25T03:47:08.5068808Z SYSTEM_ENABLEACCESSTOKEN=SecretVariable
+2022-01-25T03:47:08.5069485Z SYSTEM_HOSTTYPE=build
+2022-01-25T03:47:08.5070065Z SYSTEM_ISSCHEDULED=False
+2022-01-25T03:47:08.5070623Z SYSTEM_JOBATTEMPT=1
+2022-01-25T03:47:08.5071312Z SYSTEM_JOBDISPLAYNAME=Cypress_e2e_tests
+2022-01-25T03:47:08.5072780Z SYSTEM_JOBID=455ccc1f-ca84-52ec-3c45-0bef21c12514
+2022-01-25T03:47:08.5073711Z SYSTEM_JOBIDENTIFIER=Cypress_e2e_tests.__default
+2022-01-25T03:47:08.5074556Z SYSTEM_JOBNAME=__default
+2022-01-25T03:47:08.5075193Z SYSTEM_JOBPARALLELISMTAG=Private
+2022-01-25T03:47:08.5075855Z SYSTEM_JOBPOSITIONINPHASE=1
+2022-01-25T03:47:08.5076441Z SYSTEM_PHASEATTEMPT=1
+2022-01-25T03:47:08.5077146Z SYSTEM_PHASEDISPLAYNAME=Cypress_e2e_tests
+2022-01-25T03:47:08.5078597Z SYSTEM_PHASEID=9df2adbc-b881-59c8-9500-86e4319f3a78
+2022-01-25T03:47:08.5079421Z SYSTEM_PHASENAME=Cypress_e2e_tests
+2022-01-25T03:47:08.5080879Z SYSTEM_PIPELINESTARTTIME=2022-01-25 10:45:15+07:00
+2022-01-25T03:47:08.5082382Z SYSTEM_PLANID=58577f8a-7496-45a1-90be-16fb07e308bb
+2022-01-25T03:47:08.5083170Z SYSTEM_PULLREQUEST_ISFORK=False
+2022-01-25T03:47:08.5083862Z SYSTEM_SERVERTYPE=OnPremises
+2022-01-25T03:47:08.5084457Z SYSTEM_STAGEATTEMPT=1
+2022-01-25T03:47:08.5085070Z SYSTEM_STAGEDISPLAYNAME=__default
+2022-01-25T03:47:08.5086421Z SYSTEM_STAGEID=96ac2280-8cb4-5df5-99de-dd2da759617d
+2022-01-25T03:47:08.5087271Z SYSTEM_STAGENAME=__default
+2022-01-25T03:47:08.5088129Z SYSTEM_TASKDEFINITIONSURI=http://ops.nccsoft.vn/DefaultCollection/
+2022-01-25T03:47:08.5089128Z SYSTEM_TASKDISPLAYNAME=Run Cypress tests
+2022-01-25T03:47:08.5091632Z SYSTEM_TASKINSTANCEID=0dc47ff7-0991-5d7c-bc66-2e84bb40eaf8
+2022-01-25T03:47:08.5092491Z SYSTEM_TASKINSTANCENAME=CmdLine4
+2022-01-25T03:47:08.5093434Z SYSTEM_TEAMFOUNDATIONCOLLECTIONURI=http://ops.nccsoft.vn/DefaultCollection/
+2022-01-25T03:47:08.5094907Z SYSTEM_TEAMFOUNDATIONSERVERURI=http://ops.nccsoft.vn/DefaultCollection/
+2022-01-25T03:47:08.5096363Z SYSTEM_TEAMPROJECT=NCC-ERP
+2022-01-25T03:47:08.5097734Z SYSTEM_TEAMPROJECTID=a5caa4a9-4c73-48d6-9b3c-d2764fe3e9ff
+2022-01-25T03:47:08.5099690Z SYSTEM_TIMELINEID=58577f8a-7496-45a1-90be-16fb07e308bb
+2022-01-25T03:47:08.5100685Z SYSTEM_TOTALJOBSINPHASE=1
+2022-01-25T03:47:08.5101394Z SYSTEM_WORKFOLDER=/home/nccsoft/myagent/_work
+2022-01-25T03:47:14.2498239Z 
+2022-01-25T03:47:14.2637284Z ================================================================================
+2022-01-25T03:47:14.2637728Z 
+2022-01-25T03:47:14.2639399Z   (Run Starting)
+2022-01-25T03:47:14.2643165Z 
+2022-01-25T03:47:14.2654145Z tput: No value for $TERM and no -T specified
+2022-01-25T03:47:14.2733989Z   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+2022-01-25T03:47:14.2735021Z   â”‚ Cypress:    7.3.0                                                                              â”‚
+2022-01-25T03:47:14.2735847Z   â”‚ Browser:    Electron 89 (headless)                                                             â”‚
+2022-01-25T03:47:14.2736648Z   â”‚ Specs:      1 found (common/coconut/index.coconut.feature)                                     â”‚
+2022-01-25T03:47:14.2737560Z   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+2022-01-25T03:47:14.2737887Z 
+2022-01-25T03:47:14.2744159Z 
+2022-01-25T03:47:14.2760286Z â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+2022-01-25T03:47:14.2761528Z                                                                                                     
+2022-01-25T03:47:14.2762069Z   Running:  common/coconut/index.coconut.feature                                            (1 of 1)
+2022-01-25T03:47:23.2349634Z 
+2022-01-25T03:47:23.2351896Z 
+2022-01-25T03:47:23.2353237Z   0 passing (2ms)
+2022-01-25T03:47:23.2353771Z 
+2022-01-25T03:47:23.2417039Z 
+2022-01-25T03:47:23.2419497Z   (Results)
+2022-01-25T03:47:23.2506882Z 
+2022-01-25T03:47:23.2571869Z   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+2022-01-25T03:47:23.2574416Z   â”‚ Tests:        0                                                                                â”‚
+2022-01-25T03:47:23.2576557Z   â”‚ Passing:      0                                                                                â”‚
+2022-01-25T03:47:23.2579121Z   â”‚ Failing:      0                                                                                â”‚
+2022-01-25T03:47:23.2581609Z   â”‚ Pending:      0                                                                                â”‚
+2022-01-25T03:47:23.2583692Z   â”‚ Skipped:      0                                                                                â”‚
+2022-01-25T03:47:23.2586046Z   â”‚ Screenshots:  0                                                                                â”‚
+2022-01-25T03:47:23.2588143Z   â”‚ Video:        false                                                                            â”‚
+2022-01-25T03:47:23.2590230Z   â”‚ Duration:     0 seconds                                                                        â”‚
+2022-01-25T03:47:23.2592383Z   â”‚ Spec Ran:     common/coconut/index.coconut.feature                                             â”‚
+2022-01-25T03:47:23.2594646Z   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+2022-01-25T03:47:23.2595483Z 
+2022-01-25T03:47:23.2736634Z 
+2022-01-25T03:47:23.2902759Z ================================================================================
+2022-01-25T03:47:23.2903650Z 
+2022-01-25T03:47:23.2904089Z   (Run Finished)
+2022-01-25T03:47:23.2908230Z tput: No value for $TERM and no -T specified
+2022-01-25T03:47:23.2935006Z 
+2022-01-25T03:47:23.2935591Z 
+2022-01-25T03:47:23.2965943Z        Spec                                              Tests  Passing  Failing  Pending  Skipped  
+2022-01-25T03:47:23.2968928Z   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+2022-01-25T03:47:23.2971069Z   â”‚ âœ”  common/coconut/index.coconut.featur        2ms        -        -        -        -        - â”‚
+2022-01-25T03:47:23.2973121Z   â”‚    e                                                                                           â”‚
+2022-01-25T03:47:23.2975449Z   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+2022-01-25T03:47:23.2977514Z     âœ”  All specs passed!                          2ms        -        -        -        -        -  
+2022-01-25T03:47:23.2979600Z 
+2022-01-25T03:47:23.4412980Z 
+2022-01-25T03:47:23.4579600Z ##[section]Finishing: Run Cypress tests

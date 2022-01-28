@@ -1,5 +1,7 @@
-const downloadFeatures = require('./downloadFeatures');
+const downloadFeatures = require("./downloadFeatures");
+const uploadTestResults = require("./uploadTestResults");
 
 module.exports = {
-    downloadFeatures,
-}
+  downloadFeatures,
+  uploadTestResults,
+};
