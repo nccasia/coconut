@@ -4,6 +4,7 @@
   "ignoreTestFiles": "*.{js}",
   "screenshotsFolder": "cypress/results/screenshots",
   "videosFolder": "cypress/results/videos",
+  "screenshotOnRunFailure": true,
   "chromeWebSecurity": false,
   "video": false
 }

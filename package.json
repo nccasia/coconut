@@ -48,7 +48,7 @@
     "ci:set-port": "node ./scripts/set-port",
     "download:features": "node ./scripts/index download",
     "download": "npm run download:features",
-    "test:cd": "cypress run",
+    "test:cd": "cypress run --config-file cypress.cd.json",
     "report": "node ./cypress/reporting/report.js",
     "test:integrate": "npm run prepare && npm run test:ci; npm run report",
     "semantic-release": "semantic-release"

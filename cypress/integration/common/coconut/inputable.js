@@ -10,6 +10,13 @@ Given(
 );
 
 Given(
+  "user enter {string} into field {string}",
+  function (value, selector) {
+    cy.get(`${selector}`).type(value);
+  },
+);
+
+Given(
   "user enter {string} into input with id {string}",
   function (value, id) {
     cy.get(`#${id}`).type(value);
@@ -17,27 +24,57 @@ Given(
 );
 
 Given(
-  "user enter {string} into field with placeholder {string}",
-  function (value , placeholder) {
+  "user enter {string} into field by id {string}",
+  function (value, id) {
+    cy.get(`#${id}`).type(value);
+  },
+);
+
+Given(
+  "user enter {string} into field by placeholder {string}",
+  function (value, placeholder) {
     cy.findAllByPlaceholderText(placeholder).type(value);
-  }
+  },
 )
 
 Given(
-  "user enter {string} into filed with name {string}",
+  "user enter {string} into field by name {string}",
   function (value, name) {
-    if(value){
+    if (value) {
       cy.get(`input[name="${name}"]`).type(value);
     }
+
     cy.get(`input[name="${name}"]`);
   },
 );
 
-Given("user clear and update {string} into filed with name {string}",
-function(value,name){
-  if(value){
-    cy.get(`input[name="${name}"]`).clear().type(value);
-  }else 
-  cy.get(`input[name="${name}"]`).clear();
+Given(
+  "user enter {string} into field by class {string}",
+  function (value, className) {
+    if (value) {
+      cy.get(`.${className}`).type(value);
+    }
 
-})
+    cy.get(`.${className}`).type(value);
+  },
+)
+
+Given("user clear field by name {string}",
+  function (name) {
+    cy.get(`input[name="${name}"]`).clear();
+  })
+
+Given("user clear field by id {string}",
+  function (id) {
+    cy.get(`#${id}`).clear();
+  })
+
+Given("user clear field by class {string}",
+  function (className) {
+    cy.get(`.${className}`).clear();
+  })
+
+Given("user clear field {string}",
+  function (selector) {
+    cy.get(`${selector}`).clear();
+  })

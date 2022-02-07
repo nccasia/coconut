@@ -8,6 +8,11 @@ const { envRules, envDefault } = example.split("\n").reduce(
   (env, line) => {
     const [nameSlug, valueAndDescriptors] = line.split("=");
     const name = (nameSlug || "").trim();
+
+    if (!name) {
+      return env;
+    }
+
     const [valueSlug, descriptorsSlug] = (valueAndDescriptors || "").split("#");
     const value = (valueSlug || "").trim();
     const descriptors = (descriptorsSlug || "")

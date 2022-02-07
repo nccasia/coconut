@@ -15,3 +15,11 @@ Given(
     cy.get(`#${id}`).should('be.visible');
   },
 );
+
+Given("user is able to see element {string}", function (element) {
+  cy.get(element).should('be.visible');
+});
+
+Given("user is able to see element by tag {string} has content", function (tagName) {
+  cy.get(tagName).should('be.visible');
+});
