@@ -1,7 +1,7 @@
 {
   "projectId": "4b7344",
   "testFiles": "**/*.{feature,features}",
-  "ignoreTestFiles": "*.{js,coconut.feature,coconut.features}",
+  "ignoreTestFiles": ["*.{js,coconut.feature,coconut.features}" ,"**/examples/**/*.feature"],
   "screenshotsFolder": "cypress/results/screenshots",
   "videosFolder": "cypress/results/videos",
   "chromeWebSecurity": false,
