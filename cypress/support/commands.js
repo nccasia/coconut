@@ -24,3 +24,15 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import '@testing-library/cypress/add-commands'
+import 'cypress-file-upload'
+
+// Cypress.Commands.overwrite('get', (originalFn, selector) => {
+//   cy.wrap(selector).as('frame')
+//   const frame = cy.get('@frame')
+
+//   if (frame) {
+//     return cy.iframe(selector).get()
+//   }
+
+//   return originalFn(selector)
+// })

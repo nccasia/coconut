@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 import { Given } from "cypress-cucumber-preprocessor/steps";
+import "./data-types";
 
 Given(
   "user click on button {string}",
@@ -39,11 +40,32 @@ Given(
   },
 );
 
+Given(
+  "user click on element {selector} contains {string}",
+  function (selector, text) {
+    cy.get(selector).contains(text).click()
+  },
+);
+
+Given(
+  "user double click on element {selector} contains {string}",
+  function (selector, text) {
+    cy.get(selector).contains(text).dblclick()
+  },
+);
+
+Given(
+  "user right click on element {selector} contains {string}",
+  function (selector, text) {
+    cy.get(selector).contains(text).rightclick();
+  },
+);
+
 Given("user click on anchor with link {string}", function (text) {
   cy.get(`a[href*="${text}"]`).click()
 });
 
-Given("user click on element {string}", function (selector) {
+Given("user click on element {selector}", function (selector) {
   cy.get(`${selector}`).click()
 });
 

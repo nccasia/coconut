@@ -29,6 +29,14 @@ And(
 );
 
 And(
+  "it should {expectation} {string}",
+  function (expectation, value) {
+    cy.get("@element")
+      .should(...expectation, value);
+  },
+);
+
+And(
   "it's {invocation} should {expectation}",
   function (extraction, expectation) {
     cy.get("@element")
@@ -36,6 +44,14 @@ And(
       .should(...expectation);
   },
 );
+
+And(
+  "element {selector} should {expectation} {string} {string}",
+  function(selector, expectation, name, value) {
+    cy.get(selector)
+    .should(...expectation, name, value)
+  },
+)
 
 And(
   "element {selector} should {expectation} {string}",
