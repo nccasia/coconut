@@ -9,3 +9,7 @@ Given("user visit page {string}", function (url) {
 Then("user is navigated to page {string}", function (slug) {
   cy.url().should('contain', slug);
 });
+
+Given("user reload page", function () {
+  cy.reload();
+});
