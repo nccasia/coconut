@@ -1,0 +1,14 @@
+{
+    "basicUser1":{
+        "userName": "nam123@gmail.com",
+        "password": "123qwe"
+    },
+    "basicUser2":{
+        "userName": "bac12344@gmail.com",
+        "password": "123qwe"
+    },
+    "pm1":{
+        "userName": "duong.nguyen",
+        "password": "123qwe"
+    }
+}
