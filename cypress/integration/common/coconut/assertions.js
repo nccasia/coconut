@@ -29,7 +29,7 @@ And(
 );
 
 And(
-  "it should {expectation} {string}",
+  "it's should {expectation} {string}",
   function (expectation, value) {
     cy.get("@element")
       .should(...expectation, value);
