@@ -13,7 +13,7 @@ Handlebars.registerHelper("commented", commentedHelper);
 
 
 function preProcessDoc(rawDoc) {
-  const refinedDoc = rawDoc;
+  const refinedDoc = rawDoc.replace(new RegExp("\\&", "gm"), "@");
 
   return refinedDoc;
 }
