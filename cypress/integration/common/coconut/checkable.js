@@ -4,7 +4,7 @@ import "./data-types";
 Given('user check element {selector}',
   function (selector) {
     cy.get(selector)
-    .check();
+    .check({ force: true });
   })
 
 Given('user uncheck element {selector}',
