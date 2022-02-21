@@ -10,7 +10,7 @@ Given(
 );
 
 Given(
-  "user enter {string} into field {string}",
+  "user enter {string} into field {selector}",
   function (value, selector) {
     cy.get(`${selector}`).type(value);
   },
@@ -37,14 +37,25 @@ Given(
   },
 )
 
+// Given(
+//   "user enter {string} into field by name {string}",
+//   function (value, name) {
+//     if (value) {
+//       cy.get(`input[name="${name}"]`).type(value);
+//     }
+
+//     cy.get(`input[name="${name}"]`);
+//   },
+// );
+
 Given(
-  "user enter {string} into field by name {string}",
-  function (value, name) {
+  "user enter {string} into field by name {selector}",
+  function (value, selector) {
     if (value) {
-      cy.get(`input[name="${name}"]`).type(value);
+      cy.get(selector).type(value);
     }
 
-    cy.get(`input[name="${name}"]`);
+    cy.get(selector);
   },
 );
 

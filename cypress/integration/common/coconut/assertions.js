@@ -68,3 +68,8 @@ And(
       .should(...expectation);
   },
 );
+
+And("extract {selector} {invocation} as alias {string}",
+  function(selector, extraction, alias) {
+    cy.get(selector).invoke(...extraction).as(alias);
+  })

@@ -88,7 +88,16 @@ defineParameterType({
 });
 
 function selectorTransform (s) {
-  cy.get(s).as('element');
+  cy.get('body')
+  .then(($body) => {
+    const ele = $body.find(s)
+
+    if (!ele.length) {
+      return s;
+    }
+
+    cy.get(s).as('element')
+  })
 
   return s;
 }
