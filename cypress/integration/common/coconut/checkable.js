@@ -1,5 +1,5 @@
 import { Given } from 'cypress-cucumber-preprocessor/steps';
-import "./data-types";
+import "./common";
 
 Given('user check element {selector}',
   function (selector) {
@@ -10,5 +10,5 @@ Given('user check element {selector}',
 Given('user uncheck element {selector}',
   function (selector) {
     cy.get(selector)
-    .uncheck();
+    .uncheck({ force: true });
   })

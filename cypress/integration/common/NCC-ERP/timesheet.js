@@ -43,7 +43,7 @@ When(
 );
 
 When(
-  "user click on day {selector} contains {string}",
+  "user click on element {selector} contains alias {string}",
   function (selector, text) {
     let expText = text;
 
@@ -54,6 +54,21 @@ When(
     }
 
     cy.get(selector).contains(new RegExp(expText, "g")).click()
+  },
+);
+
+When(
+  "user click on element {selector} contains exact alias {string}",
+  function (selector, text) {
+    let expText = text;
+
+    if (expText.startsWith('@')) {
+      const alias = expText.substring(1);
+
+      expText = this[alias];
+    }
+
+    cy.get(selector).contains(expText).click()
   },
 );
 
@@ -79,4 +94,16 @@ When("user able to see sub element {selector} in element {selector} by alias {st
   }
 
   cy.get(selector).contains(expText).parents(selector).find(subEle).should('be.visible');
+});
+
+When("user click on element {selector} is {string} child by alias", function (selector, text) {
+  let expText = text;
+
+  if (expText.startsWith('@')) {
+    const alias = expText.substring(1);
+
+    expText = this[alias];
+  }
+
+  cy.get(selector).eq(expText).click();
 });
