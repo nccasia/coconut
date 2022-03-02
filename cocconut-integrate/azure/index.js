@@ -20,7 +20,7 @@ async function downloadParameters(params) {
       workItemId: targetId,
     });
 
-    if (!res || !res.fixture) {
+    if (!res || !res.fixture || !res.automated) {
       continue;
     }
 

@@ -1,5 +1,6 @@
 const api = require("./azure-api");
 const parse = require("xml-parser");
+const { parseWorkItem } = require('./feature-parser');
 
 function parseDataRow(row, index) {
   return row.children.reduce((res, cell) => {
@@ -76,15 +77,20 @@ async function fetchParam({ projectId, workItemId, expand, apiVersion }) {
     apiVersion: "5.0",
   });
 
-  const title = response.data.fields['System.Title'];
+  const workItem = parseWorkItem(response.data);
+
+  const title = workItem.title;
+  const tags = workItem.tags;
   const name = title.replace(/ /gm, '_');
   const paramsRaw = response.data.fields['Microsoft.VSTS.TCM.Parameters'];
   const params = parseSharedParameters(paramsRaw);
-
+  const automated = tags.includes('Automated');
   const fixture = parseFixture(params);
 
   return {
     title,
+    automated,
+    tags,
     name,
     params,
     fixture,

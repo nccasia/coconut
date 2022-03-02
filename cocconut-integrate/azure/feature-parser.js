@@ -320,4 +320,5 @@ function parseFeature(testSuite, plan) {
 
 module.exports = {
   parseFeature,
+  parseWorkItem,
 };
