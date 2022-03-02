@@ -1,8 +1,9 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
+import "./data-types";
 
 Given(
-  "set {string} as alias {string}",
-  function (selectorName, aliasName) {
-    cy.get(selectorName).as(aliasName)
+  "set element {selector} as alias {string}",
+  function (selector, text) {
+    cy.get(selector).as(text)
   },
 );

@@ -59,11 +59,29 @@ function replaceParameters(message, examples) {
   return result;
 }
 
+function replaceAlias(message, examples) {
+  const reg = new RegExp("\\&", "gm");
+  let result = message.replace(reg, "@");
+
+  return result;
+}
+
+function replaceLineBreak(message, examples) {
+  const reg = new RegExp("(\\r\\n|\\n|\\r)", "gm");
+  let result = message.replace(reg, " ");
+
+  return result.trim();
+}
+
 function parseStepMessage(message, examples) {
   const prettified = convert(decode(message || ""));
   const parapeted = replaceParameters(prettified, examples);
+  const aliasReplaced = replaceAlias(parapeted, examples);
+  const lineBreakReplaced = replaceLineBreak(aliasReplaced, examples);
 
-  return parapeted;
+  console.log(lineBreakReplaced)
+
+  return lineBreakReplaced;
 }
 
 function parseLocalStep(step, examples) {

@@ -1,5 +1,6 @@
 const Handlebars = require("handlebars");
 const fs = require("fs");
+const path = require("path");
 const { examplePartial } = require("./example-partial");
 const { actionPartial } = require("./action-helper");
 const { commentedHelper } = require("./commented-helper");
@@ -11,13 +12,39 @@ Handlebars.registerPartial("examples", examplePartial);
 Handlebars.registerHelper("action", actionPartial);
 Handlebars.registerHelper("commented", commentedHelper);
 
-
 function preProcessDoc(rawDoc) {
-  const refinedDoc = rawDoc;
+  const refinedDoc = rawDoc.replace(new RegExp("\\&", "gm"), "@");
 
   return refinedDoc;
 }
 
+function loadFixturesContext(fixturePath) {
+  const context = {};
+
+  const files = fs.readdirSync(fixturePath);
+
+  for (const file of files) {
+    if (file.endsWith(".json")) {
+      const content = fs.readFileSync(path.resolve(fixturePath, file));
+      const fixture = JSON.parse(content);
+      const key = file.replace(".json", "");
+
+      context[key] = fixture;
+    }
+  }
+
+  return context;
+}
+
+function postProcessDoc(compiledDoc) {
+  const fixturePath = path.resolve('cypress/fixtures')
+  const context = loadFixturesContext(fixturePath);
+  const resultDoc = Handlebars.compile(compiledDoc, { noEscape: true })(
+    context,
+  );
+
+  return resultDoc;
+}
 
 function compileDoc(templateDoc, context) {
   const templateStr = preProcessDoc(templateDoc);
@@ -25,7 +52,9 @@ function compileDoc(templateDoc, context) {
 
   const compiledDoc = template(context);
 
-  return compiledDoc;
+  const postCompiledDoc = postProcessDoc(compiledDoc);
+
+  return postCompiledDoc;
 }
 
 const filenamePattern = /\.(feature|features)$/;
@@ -45,7 +74,6 @@ const gherkinsTransform = function (file) {
 
   return through(write, end);
 };
-
 
 module.exports = {
   gherkinsTransform,

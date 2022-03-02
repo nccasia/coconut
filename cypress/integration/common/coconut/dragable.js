@@ -1,6 +1,7 @@
 import { Given } from "cypress-cucumber-preprocessor/steps";
+import "./data-types";
 
-Given("user drag {string} and drop into {string}", function (eleDrag, eleDrop) {
+Given("user drag {selector} and drop into {selector}", function (eleDrag, eleDrop) {
   const dataTransfer = new DataTransfer()
 
   cy.get(`${eleDrag}`).trigger('dragstart', {
