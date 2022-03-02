@@ -48,7 +48,7 @@
     "ci:set-port": "node ./scripts/set-port",
     "download:features": "node ./scripts/index download",
     "download:data": "node ./scripts/index params",
-    "download": "npm run download:features && npm run download:data",
+    "download": "npm run download:data && npm run download:features",
     "seed": "npm run download",
     "test:cd": "cypress run --config-file cypress.cd.json",
     "report": "node ./cypress/reporting/report.js",
