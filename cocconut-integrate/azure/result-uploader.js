@@ -64,8 +64,7 @@ async function getTestPoints({
     suiteId,
     apiVersion,
   });
-  console.log(response);
-  
+
   return response.data;
 }
 

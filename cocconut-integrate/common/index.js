@@ -12,6 +12,11 @@ function writeFeature(feature, outPath) {
   fs.writeFileSync(outPath, featureDoc);
 }
 
+function writeFixture(fixture, outPath) {
+  fs.writeFileSync(outPath, JSON.stringify(fixture));
+}
+
 module.exports = {
   writeFeature,
+  writeFixture,
 }

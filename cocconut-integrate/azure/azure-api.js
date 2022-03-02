@@ -18,7 +18,7 @@ function configure({
   token,
 }) {
   api = axios.create({
-    baseURL: `https://${coreServer}/${organizationId}`,
+    baseURL: `${coreServer}/${organizationId}`,
     auth: {
       username: user,
       password: token,
@@ -34,7 +34,7 @@ function configure({
     },
     (error) => {
       return Promise.reject(error);
-    },
+    }
   );
 }
 
@@ -86,7 +86,7 @@ async function getTestCases({ projectId, testPlanId, suiteId, apiVersion }) {
       params: {
         "api-version": apiVersion,
       },
-    },
+    }
   );
 }
 
@@ -99,33 +99,72 @@ async function getWorkItem({ projectId, workItemId, expand, apiVersion, url }) {
   });
 }
 
-async function searchWorkItems({ type, expand, apiVersion, fields }) {
+async function searchWorkItems({ projectId, coreServer, organizationId, apiVersion }) {
   return api.post(
-    `/_apis/search/workitemsearchresults`,
+    `/_apis/Contribution/dataProviders/query`,
     {
-      searchText: "",
-      $skip: 0,
-      $top: 1,
-      filters: {
-        "System.TeamProject": ["MyFirstProject"],
-        "System.AreaPath": ["MyFirstProject"],
-        "System.WorkItemType": ["Task"],
-        "System.State": ["New", "Active", "Closed"],
-        "System.AssignedTo": [],
-      },
-      $orderBy: [
-        {
-          field: "system.id",
-          sortOrder: "ASC",
+      contributionIds: ["ms.vss-work-web.work-item-query-data-provider"],
+      context: {
+        properties: {
+          wiql: "Select [System.Id], [System.Title] FROM WorkItems where [System.TeamProject] = @project AND System.WorkItemType in GROUP 'Microsoft.SharedParameterCategory' ORDER BY [System.Title]",
+          pageSource: {
+            contributionPaths: [
+              "VSS",
+              "VSS/Resources",
+              "q",
+              "knockout",
+              "mousetrap",
+              "mustache",
+              "react",
+              "react-dom",
+              "react-transition-group",
+              "jQueryUI",
+              "jquery",
+              "OfficeFabric",
+              "tslib",
+              "@uifabric",
+              "VSSUI",
+              "ContentRendering",
+              "ContentRendering/Resources",
+              "TFSUI",
+              "TFSUI/Resources",
+              "Charts",
+              "Charts/Resources",
+              "WidgetComponents",
+              "WidgetComponents/Resources",
+              "TFS",
+              "Notifications",
+              "Presentation/Scripts/marked",
+              "Presentation/Scripts/URI",
+              "Presentation/Scripts/punycode",
+              "Presentation/Scripts/IPv6",
+              "Presentation/Scripts/SecondLevelDomains",
+              "highcharts",
+              "highcharts/highcharts-more",
+              "highcharts/modules/accessibility",
+              "highcharts/modules/heatmap",
+              "highcharts/modules/funnel",
+              "Analytics",
+            ],
+            selectedHubGroupId: "ms.vss-test-web.test-hub-group",
+            selectedHubId: "ms.vss-testmanager-web.testmanager-parameters-hub",
+            url: `${coreServer}/${organizationId}/${projectId}/_testManagement/sharedParameters`,
+          },
+          sourcePage: {
+            url: `${coreServer}/${organizationId}/${projectId}/_testManagement/sharedParameters`,
+            routeId: "ms.vss-testmanager-web.testmanager-parameters-route",
+            routeValues: {
+              project: projectId,
+              controller: "testManagement",
+              action: "sharedParameters",
+            },
+          },
         },
-      ],
-      includeFacets: true,
+      },
     },
     {
       params: {
         "api-version": apiVersion,
-        $expand: expand,
-        fields,
       },
     },
   );
@@ -149,7 +188,7 @@ function createTestRun({
     },
     {
       apiVersion,
-    },
+    }
   );
 }
 
@@ -207,7 +246,6 @@ function getTestResults({
 }
 
 function updateTestResult({ projectId, runId, apiVersion, data }) {
-
   return api.patch(`/${projectId}/_apis/test/Runs/${runId}/results`, data, {
     validateStatus: false,
     params: {
@@ -239,7 +277,7 @@ function getTestPoints({
         includePointDetails,
         "api-version": apiVersion,
       },
-    },
+    }
   );
 }
 
