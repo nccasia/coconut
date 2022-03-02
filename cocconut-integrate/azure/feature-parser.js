@@ -79,8 +79,6 @@ function parseStepMessage(message, examples) {
   const aliasReplaced = replaceAlias(parapeted, examples);
   const lineBreakReplaced = replaceLineBreak(aliasReplaced, examples);
 
-  console.log(lineBreakReplaced)
-
   return lineBreakReplaced;
 }
 
