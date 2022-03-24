@@ -1,10 +1,39 @@
-const { writeFeature } = require("../common");
+const { writeFeature, writeFixture } = require("../common");
 const { parseFeature } = require("./feature-parser");
 const { fetchFeatures } = require("./features-fetcher");
+const { fetchParams, fetchParam } = require('./params-fetcher');
 const { loadTestResults } = require("../common/results-loader/index");
 const { getTestRuns, getTestResults, updateTestResult } = require("./result-uploader");
 const azureApi = require("./azure-api");
 const path = require("path");
+
+async function downloadParameters(params) {
+  azureApi.configure(params);
+  console.log("Downloading parameters");
+  const result = await fetchParams(params);
+
+  const targetIds = result.data['ms.vss-work-web.work-item-query-data-provider']['data'].targetIds;
+
+  for (const targetId of targetIds) {
+    const res = await fetchParam({
+      projectId: params.projectId,
+      workItemId: targetId,
+    });
+
+    if (!res || !res.fixture || !res.automated) {
+      continue;
+    }
+
+    const fileName = `${res.name}.json`;
+    const outPath = path.join(path.resolve(params.fixturePath), fileName);
+
+    console.log(`Writing fixture ${outPath}`);
+
+    const fixture = res.fixture;
+
+    await writeFixture(fixture, outPath);
+  }
+}
 
 async function downloadFeatures(params) {
   azureApi.configure(params);
@@ -62,5 +91,6 @@ async function uploadResults(params) {
 
 module.exports = {
   downloadFeatures,
+  downloadParameters,
   uploadResults,
 };

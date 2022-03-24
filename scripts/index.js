@@ -1,4 +1,4 @@
-const { downloadFeatures, uploadTestResults } = require("../cocconut-integrate");
+const { downloadFeatures, uploadTestResults, downloadParameters } = require("../cocconut-integrate");
 const { program } = require("commander");
 
 require("./env");
@@ -19,6 +19,9 @@ async function main(options, task) {
   switch (task) {
     case "download": {
       return await downloadFeatures(options);
+    }
+    case "params": {
+      return await downloadParameters(options);
     }
     case "upload": {
       return await uploadTestResults(options);
