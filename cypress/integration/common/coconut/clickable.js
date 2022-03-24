@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import { Given } from "cypress-cucumber-preprocessor/steps";
-import "./data-types";
+import "./common";
 
 Given(
   "user click on button {string}",
@@ -93,3 +93,7 @@ Given("user forced click on element {selector}", function (selector) {
 Given("user forced click on element has text {string}", function (text) {
   cy.contains(text).click({ force: true });
 });
+
+Given("user click on the next section of a element {selector}", function(selector) {
+  cy.get(selector).next().click();
+})

@@ -85,7 +85,7 @@ Given("user clear field by class {string}",
     cy.get(`.${className}`).clear();
   })
 
-Given("user clear field {string}",
+Given("user clear element {selector}",
   function (selector) {
     cy.get(`${selector}`).clear();
   })

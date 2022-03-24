@@ -57,6 +57,21 @@ When(
   },
 );
 
+When(
+  "user click on element {selector} contains exact alias {string}",
+  function (selector, text) {
+    let expText = text;
+
+    if (expText.startsWith('@')) {
+      const alias = expText.substring(1);
+
+      expText = this[alias];
+    }
+
+    cy.get(selector).contains(expText).click()
+  },
+);
+
 When("user click on sub element {selector} in element {selector} by alias {string}", function (subEle, selector, text) {
   let expText = text;
 
