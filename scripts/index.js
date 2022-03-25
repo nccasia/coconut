@@ -1,4 +1,8 @@
-const { downloadFeatures, uploadTestResults, downloadParameters } = require("../cocconut-integrate");
+const {
+  downloadFeatures,
+  uploadTestResults,
+  downloadParameters,
+} = require("../integrate");
 const { program } = require("commander");
 
 require("./env");
