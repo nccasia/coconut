@@ -2,14 +2,16 @@
 
 ![kitchensink](https://cloud.githubusercontent.com/assets/1268976/14084252/e309e370-f4e7-11e5-9562-24f516563ac9.gif)
 
-This is an example app used to showcase [Cypress.io](https://www.cypress.io/) testing. The application uses every API command in Cypress for demonstration purposes. Additionally this example app is configured to run tests in various CI platforms. The [tests](https://github.com/cypress-io/cypress-example-kitchensink/blob/master/cypress/integration) are also heavily commented. For a full reference of our documentation, go to [docs.cypress.io](https://docs.cypress.io/).
+**Coconut* is a BDD - E2E testing framework based on  [Cypress](https://www.cypress.io/) and [Cucumber](https://cucumber.io/). The purspose is provide  standard workspace for e2e regestion testing integrate with diffrences workflows and CI/CD ready.
 
-To see the kitchen sink application, visit [example.cypress.io](https://example.cypress.io/).
+> we are highly inspried by [Specflow](https://specflow.org/)
 
-[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
-[renovate-app]: https://renovateapp.com/
-[semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
-[semantic-url]: https://github.com/semantic-release/semantic-release
+# Features
+
+- [x] Azure devops integration
+- [x] Base common steps
+- [x] Working example
+- [x] CI/CD setup
 
 ## CI status
 
