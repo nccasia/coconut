@@ -2,7 +2,7 @@
 
 ![kitchensink](https://cloud.githubusercontent.com/assets/1268976/14084252/e309e370-f4e7-11e5-9562-24f516563ac9.gif)
 
-**Coconut* is a BDD - E2E testing framework based on  [Cypress](https://www.cypress.io/) and [Cucumber](https://cucumber.io/). The purspose is provide  standard workspace for e2e regestion testing integrate with diffrences workflows and CI/CD ready.
+**Coconut** is a BDD - E2E testing framework based on  [Cypress](https://www.cypress.io/) and [Cucumber](https://cucumber.io/). The purspose is provide  standard workspace for e2e regestion testing integrate with diffrences workflows and CI/CD ready.
 
 > we are highly inspried by [Specflow](https://specflow.org/)
 
